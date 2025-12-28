@@ -1,0 +1,440 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 30% 25%;
+    --input: 220 25% 12%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    /* iOS 26 Glassmorphism tokens */
+    --glass-bg: 220 30% 8% / 0.6;
+    --glass-border: 217 50% 40% / 0.3;
+    --glass-shadow: 217 91% 20% / 0.4;
+    --glass-blur: 20px;
+    --glass-glow: 217 91% 60%;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 30% 20%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 217 91% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 50%;
+
+    --glass-bg: 0 0% 100% / 0.8;
+    --glass-border: 214 32% 80% / 0.5;
+    --glass-shadow: 217 91% 50% / 0.1;
+    --glass-blur: 20px;
+    --glass-glow: 217 91% 50%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 50%;
+  }
+
+  .dark {
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 30% 25%;
+    --input: 220 25% 12%;
+    --ring: 217 91% 60%;
+
+    --sidebar-background: 220 25% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 30% 15%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 30% 20%;
+    --sidebar-ring: 217 91% 60%;
+  }
+
+  .device {
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 25% 8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 30% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 91% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 30% 25%;
+    --input: 220 25% 12%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    --padding-small: 0.75rem;
+    --padding-medium: 1rem;
+    --padding-large: 1.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  .device button, .device input, .device select {
+    @apply min-h-[48px];
+  }
+  
+  .device .touch-element {
+    @apply py-3 px-4;
+  }
+}
+
+@layer components {
+  /* iOS 26 Glassmorphism card - Dark mode */
+  .glass-card {
+    @apply relative rounded-2xl border border-border/30 shadow-xl;
+    background: linear-gradient(
+      135deg,
+      hsl(220 30% 12% / 0.8) 0%,
+      hsl(220 25% 8% / 0.6) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Light mode glass card */
+  .light .glass-card {
+    background: linear-gradient(
+      135deg,
+      hsl(0 0% 100% / 0.9) 0%,
+      hsl(210 40% 98% / 0.8) 100%
+    );
+    border-color: hsl(214 32% 91%);
+    box-shadow: 0 4px 20px hsl(217 91% 50% / 0.1);
+  }
+
+  .glass-card::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl pointer-events-none;
+    background: linear-gradient(
+      135deg,
+      hsl(217 91% 60% / 0.1) 0%,
+      transparent 50%
+    );
+  }
+
+  .light .glass-card::before {
+    background: linear-gradient(
+      135deg,
+      hsl(217 91% 60% / 0.05) 0%,
+      transparent 50%
+    );
+  }
+
+  /* Glass button */
+  .glass-button {
+    @apply relative rounded-full border border-primary/30 font-semibold transition-all duration-300;
+    background: linear-gradient(
+      135deg,
+      hsl(217 91% 50% / 0.3) 0%,
+      hsl(217 91% 40% / 0.2) 100%
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .light .glass-button {
+    background: linear-gradient(
+      135deg,
+      hsl(217 91% 50% / 0.15) 0%,
+      hsl(217 91% 60% / 0.1) 100%
+    );
+    border-color: hsl(217 91% 50% / 0.3);
+  }
+
+  .glass-button:hover {
+    @apply border-primary/50 shadow-lg;
+    box-shadow: 0 0 30px hsl(217 91% 60% / 0.3);
+  }
+
+  .light .glass-button:hover {
+    box-shadow: 0 0 20px hsl(217 91% 50% / 0.2);
+  }
+
+  /* Cosmic background - Dark mode */
+  .cosmic-bg {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      180deg,
+      hsl(220 40% 4%) 0%,
+      hsl(220 50% 8%) 50%,
+      hsl(217 60% 12%) 100%
+    );
+  }
+
+  /* Light mode cosmic background */
+  .light .cosmic-bg {
+    background: linear-gradient(
+      180deg,
+      hsl(210 40% 98%) 0%,
+      hsl(210 50% 96%) 50%,
+      hsl(217 60% 95%) 100%
+    );
+  }
+
+  .cosmic-bg::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% 0%, hsl(217 91% 50% / 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(217 91% 40% / 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse 50% 30% at 20% 60%, hsl(200 80% 50% / 0.08) 0%, transparent 40%);
+  }
+
+  .light .cosmic-bg::before {
+    background: 
+      radial-gradient(ellipse 80% 50% at 50% 0%, hsl(217 91% 50% / 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, hsl(217 91% 50% / 0.05) 0%, transparent 40%),
+      radial-gradient(ellipse 50% 30% at 20% 60%, hsl(200 80% 60% / 0.04) 0%, transparent 40%);
+  }
+
+  /* Glass input */
+  .glass-input {
+    @apply rounded-xl border border-border/40 bg-input/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .light .glass-input {
+    background: hsl(0 0% 100% / 0.9);
+    border-color: hsl(214 32% 91%);
+  }
+
+  /* Glass navigation - Dark mode */
+  .glass-nav {
+    @apply border-t border-border/30;
+    background: linear-gradient(
+      180deg,
+      hsl(220 30% 10% / 0.9) 0%,
+      hsl(220 25% 6% / 0.95) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Light mode glass navigation */
+  .light .glass-nav {
+    background: linear-gradient(
+      180deg,
+      hsl(0 0% 100% / 0.95) 0%,
+      hsl(210 40% 98% / 0.98) 100%
+    );
+    border-color: hsl(214 32% 91%);
+  }
+
+  /* Glass header */
+  .glass-header {
+    @apply border-b border-border/20;
+    background: linear-gradient(
+      180deg,
+      hsl(220 25% 8% / 0.9) 0%,
+      hsl(220 30% 6% / 0.8) 100%
+    );
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Light mode glass header */
+  .light .glass-header {
+    background: linear-gradient(
+      180deg,
+      hsl(0 0% 100% / 0.95) 0%,
+      hsl(210 40% 98% / 0.9) 100%
+    );
+    border-color: hsl(214 32% 91%);
+  }
+
+  /* Glow effect */
+  .glow-blue {
+    box-shadow: 0 0 40px hsl(217 91% 60% / 0.3),
+                0 0 80px hsl(217 91% 60% / 0.15),
+                inset 0 1px 0 hsl(217 91% 80% / 0.2);
+  }
+
+  .light .glow-blue {
+    box-shadow: 0 0 20px hsl(217 91% 50% / 0.2),
+                0 0 40px hsl(217 91% 50% / 0.1);
+  }
+
+  /* Light trails effect */
+  .light-trails::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: 
+      linear-gradient(45deg, transparent 40%, hsl(217 91% 60% / 0.05) 50%, transparent 60%),
+      linear-gradient(-45deg, transparent 40%, hsl(200 80% 60% / 0.03) 50%, transparent 60%);
+    animation: shimmer 8s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.5; transform: translateX(-10%); }
+    50% { opacity: 1; transform: translateX(10%); }
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(217 91% 60% / 0.5),
+                 0 0 40px hsl(217 91% 60% / 0.3);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px hsl(217 91% 60% / 0.2),
+                inset 0 1px 0 hsl(217 91% 80% / 0.1);
+  }
+
+  /* Floating animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Button floating animation - gentle water-like bobbing */
+  @keyframes button-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    25% {
+      transform: translateY(-2px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+    75% {
+      transform: translateY(-2px);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+
+  .animate-float-slow {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-button-float {
+    animation: button-float 2s ease-in-out infinite;
+  }
+}
